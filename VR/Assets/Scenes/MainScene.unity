@@ -841,6 +841,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shader: {fileID: 2100000, guid: ae211cd07070ab68d9e6f53332345ae0, type: 2}
+  shadern: {fileID: 2100000, guid: ebf967f4a173f97b9add2d309fb2edab, type: 2}
+  kek: {fileID: 8400000, guid: 9980000514e0a02ab931bc318fec7be1, type: 2}
 --- !u!1 &1086534057
 GameObject:
   m_ObjectHideFlags: 0

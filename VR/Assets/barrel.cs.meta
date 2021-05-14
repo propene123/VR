@@ -3,7 +3,10 @@ guid: 9a788b59ff0f59167ab6fa17500a54ef
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - shader: {fileID: 2100000, guid: ae211cd07070ab68d9e6f53332345ae0, type: 2}
+  - shadern: {fileID: 2100000, guid: d3d5f3e7d1862bdd796b6c84e0f4d51a, type: 2}
+  - kek: {fileID: 8400000, guid: aa79c05fa633ff4d6b977cf7277d562f, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

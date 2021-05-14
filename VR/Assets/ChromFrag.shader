@@ -38,60 +38,34 @@ Shader "Hidden/ChromFrag"
 
             sampler2D _MainTex;
 
+            float2 helpfulConv(float2 pos)
+            {
+                return (pos/2) + float2(0.5f,0.5f);
+            }
+            
+            float2 pol2cart(float dist, float angle)
+            {
+                return float2(dist*cos(angle), dist*sin(angle));
+            }
+            
             fixed4 frag (v2f i) : SV_Target
             {
-                float c1 = 2.0f;
-                float c2 = 2.0f;
+                float c1 = 0.1f;
+                float c2 = -0.05f;
                 float2 xy = i.clips.xy;
-                fixed4 res;
+                
                 
                 float theta = atan2(xy.y,xy.x);
                 float r = sqrt((xy.x*xy.x)+(xy.y*xy.y));
                 
-                r = (c1*pow(r,2)+c2*pow(r,4)+pow(c1,2)*pow(r,4)+pow(c2,2)*pow(r,8)+2*c1*c2*pow(r,6))/(1+4*c1*pow(r,2)+6*c2*pow(r,4));
+                float off = (c1*pow(r,2)+c2*pow(r,4)+pow(c1,2)*pow(r,4)+pow(c2,2)*pow(r,8)+2*c1*c2*pow(r,6))/(1+4*c1*pow(r,2)+6*c2*pow(r,4));                
+                 
+                float red = tex2D(_MainTex, helpfulConv(xy+xy*off)).r;
+                float b = tex2D(_MainTex, helpfulConv(xy-xy*off)).b;
+                float g = tex2D(_MainTex, helpfulConv(xy)).g;
                 
-                xy.x = r * cos(theta);
-                xy.y = r * sin(theta);
                 
-                xy = (xy/2.0f) + float2(0.5,0.5);
-                
-                fixed4 col = tex2D(_MainTex, xy);
-                res.r = col.r;
-                
-                c1 = 2.25f;
-                c2 = 2.25f;
-                xy = i.clips.xy;
-                theta = atan2(xy.y,xy.x);
-                r = sqrt((xy.x*xy.x)+(xy.y*xy.y));
-                
-                r = (c1*pow(r,2)+c2*pow(r,4)+pow(c1,2)*pow(r,4)+pow(c2,2)*pow(r,8)+2*c1*c2*pow(r,6))/(1+4*c1*pow(r,2)+6*c2*pow(r,4));
-                
-                xy.x = r * cos(theta);
-                xy.y = r * sin(theta);
-                
-                xy = (xy/2.0f) + float2(0.5,0.5);
-                
-                col = tex2D(_MainTex, xy);
-                res.g = col.g;
-                
-                c1 = 2.5f;
-                c2 = 2.5f;
-                xy = i.clips.xy;
-                theta = atan2(xy.y,xy.x);
-                r = sqrt((xy.x*xy.x)+(xy.y*xy.y));
-                
-                r = (c1*pow(r,2)+c2*pow(r,4)+pow(c1,2)*pow(r,4)+pow(c2,2)*pow(r,8)+2*c1*c2*pow(r,6))/(1+4*c1*pow(r,2)+6*c2*pow(r,4));
-                
-                xy.x = r * cos(theta);
-                xy.y = r * sin(theta);
-                
-                xy = (xy/2.0f) + float2(0.5,0.5);
-                
-                col = tex2D(_MainTex, xy);
-                res.b = col.b;
-                res.a = 1.0f;
-                
-                return res;
+                return fixed4(red,g,b,1.0f);
             }
             ENDCG
         }
