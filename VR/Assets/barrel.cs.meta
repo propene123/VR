@@ -5,8 +5,8 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - shader: {fileID: 2100000, guid: ae211cd07070ab68d9e6f53332345ae0, type: 2}
-  - shadern: {fileID: 2100000, guid: d3d5f3e7d1862bdd796b6c84e0f4d51a, type: 2}
-  - kek: {fileID: 8400000, guid: aa79c05fa633ff4d6b977cf7277d562f, type: 2}
+  - shadern: {fileID: 2100000, guid: ebf967f4a173f97b9add2d309fb2edab, type: 2}
+  - kek: {fileID: 8400000, guid: 9980000514e0a02ab931bc318fec7be1, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

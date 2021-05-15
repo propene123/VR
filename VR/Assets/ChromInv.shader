@@ -1,4 +1,4 @@
-Shader "Hidden/ChromFrag"
+Shader "Hidden/ChromInv"
 {
     Properties
     {
@@ -58,15 +58,14 @@ Shader "Hidden/ChromFrag"
                 float theta = atan2(xy.y,xy.x);
                 float r = sqrt((xy.x*xy.x)+(xy.y*xy.y));
                 
-                float off = (c1*pow(r,2)+c2*pow(r,4)+pow(c1,2)*pow(r,4)+pow(c2,2)*pow(r,8)+2*c1*c2*pow(r,6))/(1+4*c1*pow(r,2)+6*c2*pow(r,4));                
+                float off = r + c1*pow(r,3) + c2*pow(r,5);
                 c1 = -0.1f;
                 c2 = 0.05f;
-                float b_off = (c1*pow(r,2)+c2*pow(r,4)+pow(c1,2)*pow(r,4)+pow(c2,2)*pow(r,8)+2*c1*c2*pow(r,6))/(1+4*c1*pow(r,2)+6*c2*pow(r,4));                
+                float b_off = r + c1*pow(r,3) + c2*pow(r,5);               
  
-                //float red = tex2D(_MainTex, helpfulConv(xy+xy*off)).r;
-                //float b = tex2D(_MainTex, helpfulConv(xy-xy*off)).b;
-                float red = tex2D(_MainTex, helpfulConv(xy-xy*off)).r;
-                float b = tex2D(_MainTex, helpfulConv(xy-xy*b_off)).b;
+                 
+                float red = tex2D(_MainTex, helpfulConv(pol2cart(off,theta))).r;
+                float b = tex2D(_MainTex, helpfulConv(pol2cart(b_off,theta))).b;
                 float g = tex2D(_MainTex, helpfulConv(xy)).g;
                 
                 

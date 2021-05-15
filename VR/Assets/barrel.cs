@@ -5,6 +5,8 @@ using UnityEngine;
 public class barrel : MonoBehaviour
 {
     
+    
+    public bool inv;
     public Material shader;
     public Material shadern;
     public RenderTexture kek;
@@ -12,8 +14,15 @@ public class barrel : MonoBehaviour
     
     void OnRenderImage(RenderTexture src, RenderTexture dest)
     {
-        Graphics.Blit(src,dest,shader);
-        //Graphics.Blit(kek,dest,shadern);
+        if(inv)
+        {
+            Graphics.Blit(src,kek,shader);
+            Graphics.Blit(kek,dest,shadern); 
+            
+        }else
+        {
+            Graphics.Blit(src,dest,shader);
+        }
     }
     
     
