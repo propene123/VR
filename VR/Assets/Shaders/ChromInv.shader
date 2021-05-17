@@ -1,4 +1,4 @@
-Shader "Hidden/ChromInv"
+Shader "Custom/ChromInv"
 {
     Properties
     {

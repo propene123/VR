@@ -1,4 +1,4 @@
-Shader "Hidden/BarrelVec"
+Shader "Custom/BarrelVec"
 {
     Properties
     {
@@ -33,14 +33,14 @@ Shader "Hidden/BarrelVec"
                 float c1 = -0.25f;
                 float c2 = 0.05f;
                 float2 xy = o.vertex.xy;
-                
-                float theta = atan2(xy.y,xy.x);
-                float r = sqrt((xy.x*xy.x)+(xy.y*xy.y));
-                
+                float r = length(xy);
+                float2 dir;
+                if(any(xy)) dir = normalize(xy);
+                else dir = float2(0.0f,0.0f);
                 r = r + c1*pow(r,3) + c2*pow(r,5);
-                                
-                xy.x = r * cos(theta);
-                xy.y = r * sin(theta);
+                
+                xy = r*dir;
+                
                 
                 o.vertex.xy = xy;                
                 o.uv = v.uv;

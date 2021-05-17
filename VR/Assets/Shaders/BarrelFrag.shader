@@ -1,4 +1,4 @@
-Shader "Hidden/BarrelFrag"
+Shader "Custom/BarrelFrag"
 {
     Properties
     {
@@ -43,16 +43,14 @@ Shader "Hidden/BarrelFrag"
                 float c1 = -0.25f;
                 float c2 = 0.05f;
                 float2 xy = i.clips.xy;
-                
-                float theta = atan2(xy.y,xy.x);
-                float r = sqrt((xy.x*xy.x)+(xy.y*xy.y));
+                float r = length(xy);
+                float2 dir;
+                if(any(xy)) dir = normalize(xy);
+                else dir = float2(0.0f,0.0f);
                 
                 r = r-r* (c1*pow(r,2)+c2*pow(r,4)+pow(c1,2)*pow(r,4)+pow(c2,2)*pow(r,8)+2*c1*c2*pow(r,6))/(1+4*c1*pow(r,2)+6*c2*pow(r,4));
-                                
-                //r = r + c1*pow(r,3) + c2*pow(r,5);
-                
-                xy.x = r * cos(theta);
-                xy.y = r * sin(theta);
+                                                
+                xy = r*dir;
 
                 xy = (xy/2.0f) + float2(0.5,0.5);
                 
