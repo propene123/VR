@@ -3,6 +3,8 @@ Shader "Custom/Inv"
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
+        _c1 ("c1", Float) = -0.25
+        _c2 ("c2", Float) = 0.05
     }
     SubShader
     {
@@ -35,20 +37,18 @@ Shader "Custom/Inv"
             }
 
             sampler2D _MainTex;
+            float _c1;
+            float _c2;
 
             fixed4 frag (v2f i) : SV_Target
             {
-                float c1 = -0.25f;
-                float c2 = 0.05f;
                 float2 xy = 2*(i.uv.xy - float2(0.5f,0.5f));
                 
                 
                 float theta = atan2(xy.y,xy.x);
                 float r = sqrt((xy.x*xy.x)+(xy.y*xy.y));
-                
-                //r = r - r*(c1*pow(r,2)+c2*pow(r,4)+pow(c1,2)*pow(r,4)+pow(c2,2)*pow(r,8)+2*c1*c2*pow(r,6))/(1+4*c1*pow(r,2)+6*c2*pow(r,4));
-                  
-                  r = r + c1*pow(r,3) + c2*pow(r,5);
+                                  
+                  r = r + _c1*pow(r,3) + _c2*pow(r,5);
                   
                 xy.x = r * cos(theta);
                 xy.y = r * sin(theta);
