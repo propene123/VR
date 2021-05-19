@@ -24,14 +24,12 @@ Shader "Custom/ChromInv"
             {
                 float2 uv : TEXCOORD0;
                 float4 vertex : SV_POSITION;
-                float4 clips : TEXCOORD1;
             };
 
             v2f vert (appdata v)
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
-                o.clips = UnityObjectToClipPos(v.vertex);
                 o.uv = v.uv;
                 return o;
             }
@@ -52,7 +50,7 @@ Shader "Custom/ChromInv"
             {
                 float c1 = 0.1f;
                 float c2 = -0.05f;
-                float2 xy = i.clips.xy;
+                float2 xy = 2*(i.uv.xy - float2(0.5f,0.5f));
                 
                 
                 float theta = atan2(xy.y,xy.x);
