@@ -13,7 +13,7 @@
 \usepackage[hidelinks]{hyperref}
 
 %uncomment below line to use reference file
-%\addbibresource{references.bib}
+\addbibresource{references.bib}
 
 %opening
 \title{VR Report}
@@ -63,9 +63,66 @@ Pixel based pre-distortion has the advantage of being much easier to implement t
 \end{figure}
 The advantage of using a the mesh based method is in the number of required calculations in the shader. When using the pixel based method the distorted radius is calculated on a per pixel basis which in the case of the 512x512 render texture used in this project is 262,144 distortion calculations. When compared to using a mesh of just 128 triangles/81 vertices which only requires distorting the individual vertices so 81 distortion calculations, the actual distortion of the image using the mesh based method leverages the interpolation that takes place between the fragment and vertex shader in order to save on direct computation of distortion for each pixel as these values are interpolated based on the vertex distortions instead. The number of texture lookups in both methods is determined by the output resolution of the scene as we have to sample the texture for each fragment to determine the final colour on the screen. Even though the computational cost is reduced by using the mesh based method to calculate where to sample the texture (thanks to interpolation), it is still necessary to sample the texture for the same number of fragments as the pixel based method.
 \subsection{Effect Of Vertex Count On Mesh Based Pre-Distortion}
+The number of vertices used for the mesh based method affects the distortion quality such that a low number of vertices produces low quality barrel distortion as there are not many vertices to interpolate texture coordinates between resulting in jagged edges to the distorted image. Using a greater number of vertices allows requires more calculations due to the increased vertex count, however it means the interpolation between each set of vertices more accurately reflects what the distortion should really look like. This is demonstrated in \autoref{fig:vert_comp} with the 25 vertex mesh clearly displaying the jagged edges, the 81 vertex mesh has some minor jagged edges which may be noticeable when using an HMD, and the 289 vertex mesh has the smoothest edges however the increase in vertex count does have diminishing returns. The increase vertex count also had a small affect on the frames per second (FPS) rendered and the time taken for the camera to render the scene, such that with a 25 vertex mesh rendering the scene took around 1.5ms whereas using the 289 vertex mesh increased that to around 4.7ms. This increase is hardly noticeable when watching the cubes rotate and made not perceivable difference to the observed FPS.
+\begin{figure}[H]
+	\centering
+	\begin{minipage}[H]{0.2\textwidth}
+		\includegraphics[width=4cm]{Barrel_Vec_32}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[H]{0.2\textwidth}
+		\includegraphics[width=4cm]{Barrel_Vec_128}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[H]{0.2\textwidth}
+		\includegraphics[width=4cm]{Barrel_Vec_45}
+	\end{minipage}
+	\caption{Static render using 25 vertex mesh (left), 81 vertex mesh (middle), and 289 vertex mesh (right)}
+	\label{fig:vert_comp}
+\end{figure}
+\subsection{Modelling The Lens}
+As is standard practice the pre-distortion was performed using and inverse distortion function, and the lens using the forward distortion function, given below:
+\begin{gather*}
+	r_d = f(r_u) = r_u + c_1r_u^3+c_2r_u^5 \\
+	f^{-1}(r_d) = r_d - r_d\left(
+	\frac{c_1r_d^2+c_2r_d^4+c_1^2r_d^4+c_2^2r_d^8+2c_1c_2r_d^6}{1+4c_1r_d^2+6c_2r_d^4}
+	\right)
+\end{gather*}
+Where $r$ is a points radius in polar coordinates, and $c_1$, $c_2$ are constants. This choice of inverse uses the inverse given in the brief as part of it, and was chosen based on~\cite{inverse}. \autoref{fig:inv_comp} shows that when using the given inverse function when simulating the lens the result is just a zoomed in version of the pre-distortion, whereas when using the function given in~\cite{inverse} the result of simulating the lens is almost indistinguishable from the undistorted scene.
+\begin{figure}[H]
+	\centering
+	\begin{minipage}[H]{0.2\textwidth}
+		\includegraphics[width=4cm]{inv_fail}
+	\end{minipage}
+	\hspace{1cm}
+	\begin{minipage}[H]{0.2\textwidth}
+		\includegraphics[width=4cm]{inv_success}
+	\end{minipage}
+	\caption{Comparison of chosen inverse function (right) and function given in the brief (left)}
+	\label{fig:inv_comp}
+\end{figure}
 
+\autoref{fig:lens_comp} shows that when using the mesh based method the vertex count has has an affect on how the final image will look to the user when passing through the lens after pre-distortion. It is clear that the higher vertex count mesh produces and more accurate final image than the other 2 vertex counts, almost as accurate as the more expensive pixel based method.
+
+\begin{figure}[H]
+	\centering
+	\begin{minipage}[H]{0.2\textwidth}
+		\includegraphics[width=4cm]{Inv_Vec_32}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[H]{0.2\textwidth}
+		\includegraphics[width=4cm]{Inv_Vec_128}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[H]{0.2\textwidth}
+		\includegraphics[width=4cm]{Inv_Vec_512}
+	\end{minipage}
+	\caption{Simulated full pass through the lens using using 25 vertex mesh (left), 81 vertex mesh (middle), and 289 vertex mesh (right)}
+	\label{fig:lens_comp}
+\end{figure}
+\section{The Potential Use of Eye Tracking}
 
 
 %uncomment below line to print bilbliography
-%\printbibliography
+\printbibliography
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.5.15)  20 MAY 2021 10:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.5.15)  20 MAY 2021 12:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -915,7 +915,7 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 14.4pt on input line 27.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 14.4pt on input line 27.
-<./images//LCA_45.png, id=16, 1217.2978pt x 1215.03937pt>
+<./images//LCA_45.png, id=20, 1217.2978pt x 1215.03937pt>
 File: ./images//LCA_45.png Graphic file (type png)
 <use ./images//LCA_45.png>
 Package pdftex.def Info: ./images//LCA_45.png  used on input line 32.
@@ -931,7 +931,7 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
 (Font)              scaled to size 7.3pt on input line 35.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
 (Font)              scaled to size 5.5pt on input line 35.
-<./images//Barrel_Frag_45.png, id=17, 1217.2978pt x 1217.2978pt>
+<./images//Barrel_Frag_45.png, id=21, 1217.2978pt x 1217.2978pt>
 File: ./images//Barrel_Frag_45.png Graphic file (type png)
 <use ./images//Barrel_Frag_45.png>
 Package pdftex.def Info: ./images//Barrel_Frag_45.png  used on input line 38.
@@ -941,7 +941,7 @@ Overfull \hbox (19.86145pt too wide) in paragraph at lines 38--39
 [][] 
  []
 
-<./images//Barrel_Vec_45.png, id=18, 1219.55624pt x 1217.2978pt>
+<./images//Barrel_Vec_45.png, id=22, 1219.55624pt x 1217.2978pt>
 File: ./images//Barrel_Vec_45.png Graphic file (type png)
 <use ./images//Barrel_Vec_45.png>
 Package pdftex.def Info: ./images//Barrel_Vec_45.png  used on input line 44.
@@ -960,7 +960,7 @@ Overfull \hbox (19.86145pt too wide) in paragraph at lines 55--56
 [][] 
  []
 
-<./images//Barrel_Vec_32.png, id=20, 1221.81468pt x 1217.2978pt>
+<./images//Barrel_Vec_32.png, id=24, 1221.81468pt x 1217.2978pt>
 File: ./images//Barrel_Vec_32.png Graphic file (type png)
 <use ./images//Barrel_Vec_32.png>
 Package pdftex.def Info: ./images//Barrel_Vec_32.png  used on input line 59.
@@ -977,26 +977,125 @@ copy)> <./images//Barrel_Frag_45.png (PNG copy)> <./images//Barrel_Vec_45.png (
 PNG copy)> <./images//Barrel_Vec_32.png (PNG copy)>]
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 12.0pt on input line 65.
- [2] (./Report.aux)
+File: ./images//Barrel_Vec_32.png Graphic file (type png)
+<use ./images//Barrel_Vec_32.png>
+Package pdftex.def Info: ./images//Barrel_Vec_32.png  used on input line 70.
+(pdftex.def)             Requested size: 113.81102pt x 113.3784pt.
+
+Overfull \hbox (19.86145pt too wide) in paragraph at lines 70--71
+[][] 
+ []
+
+<./images//Barrel_Vec_128.png, id=37, 1221.81468pt x 1217.2978pt>
+File: ./images//Barrel_Vec_128.png Graphic file (type png)
+<use ./images//Barrel_Vec_128.png>
+Package pdftex.def Info: ./images//Barrel_Vec_128.png  used on input line 74.
+(pdftex.def)             Requested size: 113.81102pt x 113.3784pt.
+
+Overfull \hbox (19.86145pt too wide) in paragraph at lines 74--75
+[][] 
+ []
+
+File: ./images//Barrel_Vec_45.png Graphic file (type png)
+<use ./images//Barrel_Vec_45.png>
+Package pdftex.def Info: ./images//Barrel_Vec_45.png  used on input line 78.
+(pdftex.def)             Requested size: 113.81102pt x 113.58272pt.
+
+Overfull \hbox (19.86145pt too wide) in paragraph at lines 78--79
+[][] 
+ []
+
+<./images//inv_fail.png, id=41, 1221.81468pt x 1217.2978pt>
+File: ./images//inv_fail.png Graphic file (type png)
+<use ./images//inv_fail.png>
+Package pdftex.def Info: ./images//inv_fail.png  used on input line 95.
+(pdftex.def)             Requested size: 113.81102pt x 113.3784pt.
+
+Overfull \hbox (19.86145pt too wide) in paragraph at lines 95--96
+[][] 
+ []
+
+<./images//inv_success.png, id=42, 1221.81468pt x 1217.2978pt>
+File: ./images//inv_success.png Graphic file (type png)
+<use ./images//inv_success.png>
+Package pdftex.def Info: ./images//inv_success.png  used on input line 99.
+(pdftex.def)             Requested size: 113.81102pt x 113.3784pt.
+
+Overfull \hbox (19.86145pt too wide) in paragraph at lines 99--100
+[][] 
+ []
+
+[2 <./images//Barrel_Vec_128.png (PNG copy)>]
+<./images//Inv_Vec_32.png, id=57, 1221.81468pt x 1217.2978pt>
+File: ./images//Inv_Vec_32.png Graphic file (type png)
+<use ./images//Inv_Vec_32.png>
+Package pdftex.def Info: ./images//Inv_Vec_32.png  used on input line 110.
+(pdftex.def)             Requested size: 113.81102pt x 113.3784pt.
+
+Overfull \hbox (19.86145pt too wide) in paragraph at lines 110--111
+[][] 
+ []
+
+<./images//Inv_Vec_128.png, id=58, 1221.81468pt x 1217.2978pt>
+File: ./images//Inv_Vec_128.png Graphic file (type png)
+<use ./images//Inv_Vec_128.png>
+Package pdftex.def Info: ./images//Inv_Vec_128.png  used on input line 114.
+(pdftex.def)             Requested size: 113.81102pt x 113.3784pt.
+
+Overfull \hbox (19.86145pt too wide) in paragraph at lines 114--115
+[][] 
+ []
+
+<./images//Inv_Vec_512.png, id=59, 1221.81468pt x 1217.2978pt>
+File: ./images//Inv_Vec_512.png Graphic file (type png)
+<use ./images//Inv_Vec_512.png>
+Package pdftex.def Info: ./images//Inv_Vec_512.png  used on input line 118.
+(pdftex.def)             Requested size: 113.81102pt x 113.3784pt.
+
+Overfull \hbox (19.86145pt too wide) in paragraph at lines 118--119
+[][] 
+ []
+
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
+(Font)              scaled to size 10.0pt on input line 126.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/sc' will be
+(Font)              scaled to size 10.0pt on input line 126.
+LaTeX Font Info:    Trying to load font information for T1+ntxtt on input line 
+126.
+(/usr/share/texmf-dist/tex/latex/newtx/t1ntxtt.fd
+File: t1ntxtt.fd 2012/04/20 v3.1
+)
+LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
+(Font)              scaled to size 10.0pt on input line 126.
+ [3 <./images//inv_fail.png (PNG copy)> <./images//inv_success.png (PNG copy)> 
+<./images//Inv_Vec_32.png (PNG copy)> <./images//Inv_Vec_128.png (PNG copy)> <.
+/images//Inv_Vec_512.png (PNG copy)>] (./Report.aux)
 Package rerunfilecheck Info: File `Report.out' has not changed.
-(rerunfilecheck)             Checksum: 71508EE199B39E5F989EFB3142B1AA11;233.
+(rerunfilecheck)             Checksum: EFE5B230DE913CBC08B976510D313A7F;300.
 Package logreq Info: Writing requests to 'Report.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
- 16853 strings out of 479383
- 273155 string characters out of 5875830
- 1004873 words of memory out of 5000000
- 33683 multiletter control sequences out of 15000+600000
- 446002 words of font info for 94 fonts, out of 8000000 for 9000
+ 17163 strings out of 479383
+ 279227 string characters out of 5875830
+ 1008641 words of memory out of 5000000
+ 33966 multiletter control sequences out of 15000+600000
+ 457663 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,9n,85p,1193b,802s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}</usr/share/texmf
--dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texmf-dist/fonts/type1/publ
-ic/newtx/ztmr.pfb>
-Output written on Report.pdf (2 pages, 629528 bytes).
+ 79i,9n,85p,1271b,1312s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc}{/usr/share/te
+xmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}{/usr/share/texmf-dist/fonts/enc/
+dvips/newtx/ntx-ot1-tlf.enc}</usr/share/texmf-dist/fonts/type1/public/newtx/New
+TXMI.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></usr/sha
+re/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/share/texmf-dist/fonts
+/type1/public/newtx/txexs.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/t
+xmiaX.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share
+/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texmf-dist/fonts/type
+1/public/newtx/ztmr.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/ztmri.p
+fb>
+Output written on Report.pdf (3 pages, 1630320 bytes).
 PDF statistics:
- 52 PDF objects out of 1000 (max. 8388607)
- 39 compressed objects within 1 object stream
- 10 named destinations out of 1000 (max. 500000)
- 45 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 121 PDF objects out of 1000 (max. 8388607)
+ 85 compressed objects within 1 object stream
+ 17 named destinations out of 1000 (max. 500000)
+ 83 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -48,7 +48,7 @@ Shader "Custom/BarrelFrag"
                 if(any(xy)) dir = normalize(xy);
                 else dir = float2(0.0f,0.0f);
                 
-                r = r-r* (_c1*pow(r,2)+_c2*pow(r,4)+pow(_c1,2)*pow(r,4)+pow(_c2,2)*pow(r,8)+2*_c1*_c2*pow(r,6))/(1+4*_c1*pow(r,2)+6*_c2*pow(r,4));
+                r = r-r*(_c1*pow(r,2)+_c2*pow(r,4)+pow(_c1,2)*pow(r,4)+pow(_c2,2)*pow(r,8)+2*_c1*_c2*pow(r,6))/(1+4*_c1*pow(r,2)+6*_c2*pow(r,4));
                                                 
                 xy = r*dir;
 

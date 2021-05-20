@@ -692,7 +692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seconds_per_rot: 2
-  static_45_degrees: 1
+  static_45_degrees: 0
 --- !u!4 &551055948
 Transform:
   m_ObjectHideFlags: 0
@@ -1218,9 +1218,9 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.32337317
+    x: 0.33200532
     y: 0
-    width: 0.35325366
+    width: 0.3359894
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -1583,7 +1583,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 119
+    m_Bits: 567
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: 6984bbac202097f5d8bc48a910236025, type: 2}
   m_TargetDisplay: 0
@@ -1902,7 +1902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   question: 1
-  Q3_Mesh_Triangle_Count: 0
+  Q3_Mesh_Triangle_Count: 2
   inverse: 0
   c1: -0.25
   c2: 0.05

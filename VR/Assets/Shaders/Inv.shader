@@ -43,15 +43,14 @@ Shader "Custom/Inv"
             fixed4 frag (v2f i) : SV_Target
             {
                 float2 xy = 2*(i.uv.xy - float2(0.5f,0.5f));
-                
-                
-                float theta = atan2(xy.y,xy.x);
-                float r = sqrt((xy.x*xy.x)+(xy.y*xy.y));
+                float r = length(xy);
+                float2 dir;
+                if(any(xy)) dir = normalize(xy);
+                else dir = float2(0.0f,0.0f);
                                   
-                  r = r + _c1*pow(r,3) + _c2*pow(r,5);
+                r = r + _c1*pow(r,3) + _c2*pow(r,5);
                   
-                xy.x = r * cos(theta);
-                xy.y = r * sin(theta);
+                xy = r*dir;
                 
                 xy = (xy/2.0f) + float2(0.5,0.5);
                 
