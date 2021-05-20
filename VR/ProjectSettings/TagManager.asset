@@ -11,14 +11,14 @@ TagManager:
   - Cubes
   - Water
   - UI
-  - Quads
-  - Lens
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Plane 32
+  - Plane 128
+  - Plane 512
+  - Quad Base
+  - Lens Base
+  - Lens 32
+  - Lens 128
+  - Lens 512
   - 
   - 
   - 
