@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ShaderMaterial
-  m_Shader: {fileID: 4800000, guid: 72d6a85b45f540e9fb7903f47311fda0, type: 3}
+  m_Shader: {fileID: 4800000, guid: 579b4c6e3499f675596935d4b8d76467, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -24,7 +24,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _c1: 0.1
-    - _c2: -0.05
+    - _c1: -0.25
+    - _c2: 0.05
     m_Colors: []
   m_BuildTextureStacks: []

@@ -190,6 +190,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: cc930958151d595bcaca19ca56fe2f66, type: 2}
+    - target: {fileID: -5754084199372789682, guid: a8af4d6bd59a6f7ec9b0d6e357e2aefb, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -462981019419857548, guid: a8af4d6bd59a6f7ec9b0d6e357e2aefb, type: 3}
     - target: {fileID: 919132149155446097, guid: a8af4d6bd59a6f7ec9b0d6e357e2aefb, type: 3}
       propertyPath: m_Name
       value: The Quad
@@ -867,9 +871,9 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.32337317
+    x: 0.33266932
     y: 0
-    width: 0.35325366
+    width: 0.33466136
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -879,7 +883,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 119
+    m_Bits: 183
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1398,11 +1402,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   question: 0
   Q3_Mesh_Vertex_Count: 0
-  inverse: 0
+  inverse: 1
   c1: -0.25
   c2: 0.05
-  lca_c1: 0.1
-  lca_c2: -0.05
+  LCA_C1: 0.1
+  LCA_C2: -0.05
   main_shader: {fileID: 2100000, guid: cc930958151d595bcaca19ca56fe2f66, type: 2}
   lens_shader: {fileID: 2100000, guid: b853c1bbbed6c7a10bb2260522845418, type: 2}
 --- !u!1 &1977379782

@@ -23,9 +23,12 @@ public class cube_spin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach (Transform t in cubes)
+        if(seconds_per_rot > 0)
         {
-            t.transform.Rotate(0, (360/seconds_per_rot)*Time.deltaTime,0);
+            foreach (Transform t in cubes)
+            {
+                t.transform.Rotate(0, (360/seconds_per_rot)*Time.deltaTime,0);
+            }
         }
     }
 }
