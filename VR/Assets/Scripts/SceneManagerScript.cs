@@ -5,6 +5,7 @@ using UnityEngine;
 
 public enum Question
 {
+    Q0_Just_Cubes,
     Q1_Pre_Distortion_Fragment_Shader,
     Q2_LCA_Correction_Fragment_Shader,
     Q3_Pre_Distortion_Mesh_Vertex_Shader
@@ -33,8 +34,29 @@ public class SceneManagerScript : MonoBehaviour
     public Camera pre_cam;
     
     
+    
+    
+    void handleQ0()
+    {
+        Camera.main.clearFlags = CameraClearFlags.Skybox;
+        
+        Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Quad Base"));
+        Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Plane 32"));
+        Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Plane 128"));
+        Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Plane 512"));
+        Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens Base"));
+        Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 32"));
+        Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 128"));
+        Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 512"));
+        Camera.main.cullingMask |= (1 << LayerMask.NameToLayer("Cubes"));
+    }
+    
+    
+    
     void handleQ1()
     {
+        Camera.main.clearFlags = CameraClearFlags.SolidColor;
+        
         main_shader.shader = Shader.Find("Custom/BarrelFrag");
         main_shader.SetFloat("_c1",c1);
         main_shader.SetFloat("_c2",c2);
@@ -51,6 +73,7 @@ public class SceneManagerScript : MonoBehaviour
             Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 32"));
             Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 128"));
             Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 512"));
+            Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Cubes"));
         }else
         {
             pre_cam.cullingMask |= (1 << LayerMask.NameToLayer("Quad Base"));
@@ -70,11 +93,14 @@ public class SceneManagerScript : MonoBehaviour
             Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 128"));
             Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 512"));
             Camera.main.cullingMask |= (1 << LayerMask.NameToLayer("Lens Base"));
+            Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Cubes"));
         }
     }
     
     void handleQ2()
     {
+        Camera.main.clearFlags = CameraClearFlags.SolidColor;
+        
         main_shader.shader = Shader.Find("Custom/ChromFrag");
         main_shader.SetFloat("_c1",LCA_C1);
         main_shader.SetFloat("_c2",LCA_C2);
@@ -91,6 +117,7 @@ public class SceneManagerScript : MonoBehaviour
             Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 32"));
             Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 128"));
             Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 512"));
+            Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Cubes"));
         }else
         {
             pre_cam.cullingMask |= (1 << LayerMask.NameToLayer("Quad Base"));
@@ -110,11 +137,14 @@ public class SceneManagerScript : MonoBehaviour
             Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 128"));
             Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 512"));
             Camera.main.cullingMask |= (1 << LayerMask.NameToLayer("Lens Base"));
+            Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Cubes"));
         }
     }
     
     void handleQ3()
     {
+        Camera.main.clearFlags = CameraClearFlags.SolidColor;
+        
         main_shader.shader = Shader.Find("Custom/BarrelVec");
         main_shader.SetFloat("_c1",c1);
         main_shader.SetFloat("_c2",c2);
@@ -135,6 +165,7 @@ public class SceneManagerScript : MonoBehaviour
                     Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 32"));
                     Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 128"));
                     Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 512"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Cubes"));
                     
                 }else
                 {
@@ -155,6 +186,7 @@ public class SceneManagerScript : MonoBehaviour
                     Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 128"));
                     Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 512"));
                     Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens Base"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Cubes"));
                 }
                 break;
             case Triangles.One_Hundred_Twenty_Eight:
@@ -168,6 +200,7 @@ public class SceneManagerScript : MonoBehaviour
                     Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 32"));
                     Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 128"));
                     Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 512"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Cubes"));
                     
                 }else
                 {
@@ -188,6 +221,7 @@ public class SceneManagerScript : MonoBehaviour
                     Camera.main.cullingMask |= (1 << LayerMask.NameToLayer("Lens 128"));
                     Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 512"));
                     Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens Base"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Cubes"));
                 }
                 break;
             case Triangles.Five_Hundred_Twelve:
@@ -201,6 +235,7 @@ public class SceneManagerScript : MonoBehaviour
                     Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 32"));
                     Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 128"));
                     Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 512"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Cubes"));
                     
                 }else
                 {
@@ -221,6 +256,7 @@ public class SceneManagerScript : MonoBehaviour
                     Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 128"));
                     Camera.main.cullingMask |= (1 << LayerMask.NameToLayer("Lens 512"));
                     Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens Base"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Cubes"));
                 }
                 break;
         }
@@ -234,6 +270,9 @@ public class SceneManagerScript : MonoBehaviour
     {
         switch (question)
         {
+            case Question.Q0_Just_Cubes:
+                handleQ0();
+                break;
             case Question.Q1_Pre_Distortion_Fragment_Shader:
                 handleQ1();
                 break;
