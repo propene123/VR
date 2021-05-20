@@ -692,7 +692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seconds_per_rot: 2
-  static_45_degrees: 0
+  static_45_degrees: 1
 --- !u!4 &551055948
 Transform:
   m_ObjectHideFlags: 0
@@ -1208,7 +1208,7 @@ Camera:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -1218,9 +1218,9 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.33266932
+    x: 0.32337317
     y: 0
-    width: 0.33466136
+    width: 0.35325366
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -1230,7 +1230,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 2147483711
+    m_Bits: 2147484215
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1901,8 +1901,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2e71f5a869c5cf739785a0d5bbcff2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  question: 0
-  Q3_Mesh_Triangle_Count: 2
+  question: 1
+  Q3_Mesh_Triangle_Count: 0
   inverse: 0
   c1: -0.25
   c2: 0.05
