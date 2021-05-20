@@ -88,7 +88,7 @@ As is standard practice the pre-distortion was performed using and inverse disto
 	\frac{c_1r_d^2+c_2r_d^4+c_1^2r_d^4+c_2^2r_d^8+2c_1c_2r_d^6}{1+4c_1r_d^2+6c_2r_d^4}
 	\right)
 \end{gather*}
-Where $r$ is a points radius in polar coordinates, and $c_1$, $c_2$ are constants. This choice of inverse uses the inverse given in the brief as part of it, and was chosen based on~\cite{inverse}. \autoref{fig:inv_comp} shows that when using the given inverse function when simulating the lens the result is just a zoomed in version of the pre-distortion, whereas when using the function given in~\cite{inverse} the result of simulating the lens is almost indistinguishable from the undistorted scene.
+Where $r$ is a points radius in polar coordinates, and $c_1$, $c_2$ are constants. This choice of inverse uses the inverse given in the brief as part of it, and was chosen based on~\cite{inverse}. \autoref{fig:inv_comp} shows that when using the given inverse function when simulating the lens the result is just a zoomed in version of the pre-distortion, whereas when using the function given in~\cite{inverse} the result of simulating the lens is almost indistinguishable from the undistorted scene. The slight errors are caused by the interpolation between vertices in the pre-distortion and the lens simulation.
 \begin{figure}[H]
 	\centering
 	\begin{minipage}[H]{0.2\textwidth}
@@ -121,7 +121,14 @@ Where $r$ is a points radius in polar coordinates, and $c_1$, $c_2$ are constant
 	\label{fig:lens_comp}
 \end{figure}
 \section{The Potential Use of Eye Tracking}
+The distortions addressed in this paper are radial distortions based on how a lens acts when light passes through it. For this reason eye tracking would be very helpful for the pre-distortions used. This is because in the current implementation the correction assumes you are constantly looking straight ahead at the very centre of the lens i.e. on-axis. However in a real world scenario a use could be looking off-axis, if this is the case then the optical distortion and chromatic aberration will be much more severe. Therefore eye tracking could be used and a more advanced software based distortion correction method could be used based on the eye tracking to pre-distort based on where the users eyes are actually looking.
 
+\section{Addressing Side-Effects of Pre-Distortion}
+The pre-correction performs barrel distortion on a render texture. This results in the edges of the image being squashed and having a reduced resolution, this can mean some loss of detail. The centre of the image can become stretched this can exacerbate aliasing problems that already exist due to the low resolution of most HMDs. Possible solutions to this could be to use an anti-aliasing method such as FXAA or MSAA to remove some of jagged edges from aliasing. The squashing around the edges also means some fragments are calculated that never get drawn to the final frame-buffer using multi-resolution shading to split the scene into separate viewports with the viewports near the edges scaled down to save rendering time.
+
+I would suggest rendering the image at a much greater resolution than the HMDs due to the aforementioned aliasing, as this would allow the use of supersampling anti-aliasing (SSAA). SSAA is the use of the higher resolution image to calculate the correct pixel colours in the downsampled image on the HMD screen in such a way that aliasing can be corrected.
+
+After performing all the corrections e.g. LCA and pre-distortion, the apparent resolution of the final scene will be reduced. This is due to the use of render textures of a fixed resolution at each stage of the pre-distortion process, as well as the pre-distortion introducing aliasing, and \autoref{fig:vert_comp} demonstrates the resolution loss around the periphery when using mesh based pre-distortion. Adding to this is the inverse radial transform used for both the LCA and pre-distortion is only an estimate based on empirically obtained constant values, this means after passing through the lens to the users eyes the final scene will be lacking detail due to minor discrepancies between the inverse transform and the actual lens transform. The ramifications on modern headsets is that it may be more worthwhile to pursue hardware solutions such as Fresnel lenses to reduce the initial distortion, or layering a second lens in the headset to perform the pre-distortion rather than using software. These hardware solutions could then be further backed up by software correction based on eye tracking to perform off-axis corrections or foveated rendering so that the detail loss near the edge of the image is not visible to user and is blurred instead.
 
 %uncomment below line to print bilbliography
 \printbibliography
