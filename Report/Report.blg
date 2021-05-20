@@ -1,12 +1,12 @@
 [0] Config.pm:312> INFO - This is Biber 2.15
 [0] Config.pm:315> INFO - Logfile is 'Report.blg'
-[64] biber:330> INFO - === Thu May 20, 2021, 13:04:47
-[75] Biber.pm:415> INFO - Reading 'Report.bcf'
-[127] Biber.pm:952> INFO - Found 1 citekeys in bib section 0
-[137] Biber.pm:4334> INFO - Processing section 0
-[145] Biber.pm:4523> INFO - Looking for bibtex format file 'references.bib' for section 0
-[146] bibtex.pm:1682> INFO - LaTeX decoding ...
-[147] bibtex.pm:1494> INFO - Found BibTeX data source 'references.bib'
+[66] biber:330> INFO - === Thu May 20, 2021, 13:23:37
+[78] Biber.pm:415> INFO - Reading 'Report.bcf'
+[131] Biber.pm:952> INFO - Found 1 citekeys in bib section 0
+[141] Biber.pm:4334> INFO - Processing section 0
+[149] Biber.pm:4523> INFO - Looking for bibtex format file 'references.bib' for section 0
+[150] bibtex.pm:1682> INFO - LaTeX decoding ...
+[152] bibtex.pm:1494> INFO - Found BibTeX data source 'references.bib'
 [181] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
 [181] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
 [181] Biber.pm:4162> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
