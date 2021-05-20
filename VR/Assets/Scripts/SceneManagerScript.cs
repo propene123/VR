@@ -115,16 +115,114 @@ public class SceneManagerScript : MonoBehaviour
     
     void handleQ3()
     {
+        main_shader.shader = Shader.Find("Custom/BarrelVec");
+        main_shader.SetFloat("_c1",c1);
+        main_shader.SetFloat("_c2",c2);
+        lens_shader.shader = Shader.Find("Custom/InvVec");
+        lens_shader.SetFloat("_c1",c1);
+        lens_shader.SetFloat("_c2",c2);
+        
         switch (Q3_Mesh_Triangle_Count)
         {
             case Triangles.Thirty_Two:
-                
+                if(!inverse)
+                {
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Quad Base"));
+                    Camera.main.cullingMask |= (1 << LayerMask.NameToLayer("Plane 32"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Plane 128"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Plane 512"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens Base"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 32"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 128"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 512"));
+                    
+                }else
+                {
+                    pre_cam.cullingMask &= ~(1 << LayerMask.NameToLayer("Quad Base"));
+                    pre_cam.cullingMask |= (1 << LayerMask.NameToLayer("Plane 32"));
+                    pre_cam.cullingMask &= ~(1 << LayerMask.NameToLayer("Plane 128"));
+                    pre_cam.cullingMask &= ~(1 << LayerMask.NameToLayer("Plane 512"));
+                    pre_cam.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens Base"));
+                    pre_cam.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 32"));
+                    pre_cam.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 128"));
+                    pre_cam.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 512"));
+                    
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Quad Base"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Plane 32"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Plane 128"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Plane 512"));
+                    Camera.main.cullingMask |= (1 << LayerMask.NameToLayer("Lens 32"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 128"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 512"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens Base"));
+                }
                 break;
             case Triangles.One_Hundred_Twenty_Eight:
+                if(!inverse)
+                {
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Quad Base"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Plane 32"));
+                    Camera.main.cullingMask |= (1 << LayerMask.NameToLayer("Plane 128"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Plane 512"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens Base"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 32"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 128"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 512"));
+                    
+                }else
+                {
+                    pre_cam.cullingMask &= ~(1 << LayerMask.NameToLayer("Quad Base"));
+                    pre_cam.cullingMask &= ~(1 << LayerMask.NameToLayer("Plane 32"));
+                    pre_cam.cullingMask |= (1 << LayerMask.NameToLayer("Plane 128"));
+                    pre_cam.cullingMask &= ~(1 << LayerMask.NameToLayer("Plane 512"));
+                    pre_cam.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens Base"));
+                    pre_cam.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 32"));
+                    pre_cam.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 128"));
+                    pre_cam.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 512"));
+                    
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Quad Base"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Plane 32"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Plane 128"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Plane 512"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 32"));
+                    Camera.main.cullingMask |= (1 << LayerMask.NameToLayer("Lens 128"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 512"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens Base"));
+                }
                 break;
             case Triangles.Five_Hundred_Twelve:
+                if(!inverse)
+                {
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Quad Base"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Plane 32"));
+                    Camera.main.cullingMask |= (1 << LayerMask.NameToLayer("Plane 128"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Plane 512"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens Base"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 32"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 128"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 512"));
+                    
+                }else
+                {
+                    pre_cam.cullingMask &= ~(1 << LayerMask.NameToLayer("Quad Base"));
+                    pre_cam.cullingMask &= ~(1 << LayerMask.NameToLayer("Plane 32"));
+                    pre_cam.cullingMask &= ~(1 << LayerMask.NameToLayer("Plane 128"));
+                    pre_cam.cullingMask |= (1 << LayerMask.NameToLayer("Plane 512"));
+                    pre_cam.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens Base"));
+                    pre_cam.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 32"));
+                    pre_cam.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 128"));
+                    pre_cam.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 512"));
+                    
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Quad Base"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Plane 32"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Plane 128"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Plane 512"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 32"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens 128"));
+                    Camera.main.cullingMask |= (1 << LayerMask.NameToLayer("Lens 512"));
+                    Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Lens Base"));
+                }
                 break;
-                
         }
         
     }

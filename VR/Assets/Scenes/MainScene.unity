@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: a8af4d6bd59a6f7ec9b0d6e357e2aefb, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a8af4d6bd59a6f7ec9b0d6e357e2aefb, type: 3}
       propertyPath: m_LocalScale.x
@@ -594,7 +594,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: a8af4d6bd59a6f7ec9b0d6e357e2aefb, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a8af4d6bd59a6f7ec9b0d6e357e2aefb, type: 3}
       propertyPath: m_LocalScale.x
@@ -819,7 +819,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 2fdc2c0912c0aea88940e3707d67ed0c, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2fdc2c0912c0aea88940e3707d67ed0c, type: 3}
       propertyPath: m_LocalScale.x
@@ -1207,8 +1207,8 @@ Camera:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1229,7 +1229,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 2147484727
+    m_Bits: 2147484215
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1466,7 +1466,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 1ab1025b6bed395f9a1ff562ee3f158f, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1ab1025b6bed395f9a1ff562ee3f158f, type: 3}
       propertyPath: m_LocalScale.x
@@ -1582,7 +1582,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 567
+    m_Bits: 119
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: 6984bbac202097f5d8bc48a910236025, type: 2}
   m_TargetDisplay: 0
@@ -1694,7 +1694,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: a8af4d6bd59a6f7ec9b0d6e357e2aefb, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a8af4d6bd59a6f7ec9b0d6e357e2aefb, type: 3}
       propertyPath: m_LocalScale.x
@@ -1901,8 +1901,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   question: 0
-  Q3_Mesh_Triangle_Count: 0
-  inverse: 1
+  Q3_Mesh_Triangle_Count: 2
+  inverse: 0
   c1: -0.25
   c2: 0.05
   LCA_C1: 0.1
